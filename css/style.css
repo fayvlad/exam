@@ -1,0 +1,205 @@
+body {
+    background-color: #EAEAEA;
+}
+
+.span1 {
+    height: 400px;
+    width: 800px;
+    margin: 100px auto;
+
+}
+
+.span1 h1 {
+    text-align: center;
+    color: #cfcfcf;
+    color: transparent;
+    font-size: 60pt;
+    background-color: #999999;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 1px;
+}
+
+.main {
+    width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+.line {
+    position: absolute;
+    left: 30px;
+    width: 4px;
+    height: 100%;
+    border-right: 1px rgba(255, 0, 0, 0.23) solid;
+    border-left: 1px rgba(255, 0, 0, 0.23) solid;
+}
+
+.head {
+    background-color: #908079;
+    height: 10px;
+    display: block;
+}
+
+.content {
+    width: 500px;
+    height: 50px;
+    border-bottom: 1px dotted #eeeeee;
+    background-color: #ffffff;
+}
+
+.input {
+    background-color: #F6F6F6;
+}
+
+.left {
+
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.left i{
+    padding: 15px 0 0 7px;
+    color: #D7D7D8;
+}
+.left i:hover{
+    color: #83ACA6;
+}
+.yes i{
+    color: #83ACA6;
+}
+
+.center {
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 0 14px;
+    width: 420px;
+    height: 100%;
+    float: left;
+    color: #000000;
+    font-style: italic;
+    font-size: 14pt;
+}
+.noactive{
+    text-decoration: line-through;
+   color: #AFACA7;
+}
+.right {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 100%;
+    float: right;
+}
+.right i{
+    padding: 15px 0 0 0;
+    width: 20px;
+    float: none;
+}
+.glyphicon-remove{
+    color: #A88A8A;
+    display: inline-block;
+}
+.glyphicon-remove:hover{
+    color: #e0454c;
+    cursor: pointer;
+}
+.glyphicon-pencil{
+    color: #7ba885;
+    display: inline-block;
+}
+.glyphicon-pencil:hover{
+    color: #00bd00;
+    cursor: pointer;
+}
+
+input{
+    height: 100%;
+    width: 420px;
+    border: none;
+    background-color: #F6F6F6;
+    color: #AFACA7;
+    font-style: italic;
+    font-size: 14pt;
+}
+.error{
+    background-color:rgba(255, 0, 0, 0.24);
+}
+input:focus{
+    outline: none;
+}
+
+.horizontline{
+height: 3px;
+    width: 496px;
+    margin: auto;
+    background-color: #e7e7e7;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.info{
+    height: 30px;
+    width: 486px;
+    background-color: #eeeeee;
+    margin: auto;
+    border-top:none ;
+    border: 1px solid #c4c4c4;
+}
+
+.leftinfo{
+    display: inline-block;
+    float: left;
+    padding: 3px 0 0 5px;
+    width: 100px;
+    font-weight: 500;
+    color: #7A7B7B;
+}
+.leftinfo a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+
+.centerinfo{
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 3px;
+    padding-left: 60px;
+    width: 240px;
+}
+
+.centerinfo a{
+    padding: 0px 3px;
+    margin: 0 auto;
+}
+
+.rightinfo{
+    display: inline-block;
+    float: right;
+    padding: 3px 5px 0 0;
+    width: 140px;
+}
+.rightinfo p{
+    float: right;
+    font-size: 8pt;
+    background-color: #D4D4D4;
+    padding: 3px;
+    margin: auto;
+    border-radius: 3px;
+    color: #7A7B7B;
+    box-shadow: inset rgba(0, 0, 0, 0.25) 1px 1px 1px;
+}
+
+.rightinfo a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}

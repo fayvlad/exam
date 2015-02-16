@@ -1,0 +1,107 @@
+$(document).ready(function () {
+    function searchitems() {
+        var lengyes = $('.no').length;
+        $('div.leftinfo a').empty().append(lengyes);
+        var lengno = $('.yes').length;
+        $('div.rightinfo a').empty().append(lengno);
+    }
+    var i = 1;
+    $(document).on('keypress', 'input#inp', function (e) {
+        if (e.keyCode == 13) {
+            var value = $(this).val();
+            $(this).val('');
+            if (value == '') {
+                $(this).addClass('error');
+            } else {
+                $(this).removeClass('error');
+                var insert = $(this).parents().find('.main');
+                insert.append('<div class="content data" id="' + i + '"><div class="left no">' +
+                '<i class="left glyphicon glyphicon-chevron-down"></i></div>' +
+                '<div class="center active"><p>' + value + '</p></div><div class="right">' +
+                '<i class="right glyphicon glyphicon-remove"></i>' +
+                '<i class="right glyphicon glyphicon-pencil"id="' + i + '"></i></div></div>');
+                i++;
+                searchitems();
+            }
+        }
+        ;
+    });
+    $(document).on("click", 'div.data i.left', function () {
+        var left = $(this).parent('div.left');
+        if (left.attr("class") == 'left no') {
+            left.removeClass('no').addClass('yes');
+            left.parent('.data').find('.center').removeClass('active').addClass('noactive');
+            searchitems();
+        } else {
+            left.removeClass('yes').addClass('no');
+            left.parent('.data').find('.center').removeClass('noactive').addClass('active');
+            searchitems();
+        }
+
+    });
+    $(document).on("click", 'div.data i.glyphicon-remove', function () {
+        $(this).parents('div.data').addClass('remove').remove();
+        $(this).parents('div.data').find('.yes').removeClass('yes').addClass('no');
+        searchitems();
+    });
+
+    $(document).on("click", 'i.glyphicon-pencil', function () {
+        var options = {
+            "backdrop": "static"
+        };
+        $('#modal').modal(options);
+        var id = $('i.glyphicon-pencil').attr('id');
+        var empt = $('.content#'+id+'>.center>p');
+        var text = empt.text();
+
+        $('#myModal').on('click','.btn-primary',function () {
+            console.log('111111');
+            var val = $(this).find('input.modimp').val();
+            empt.append(val);
+        });
+
+            //$('.modimp').attr('value',text);
+
+
+    });
+    /*
+    $(document).on("hidden.bs.modal", function () {
+                var id = $('div.data>i.glyphicon-pencil').attr('id');
+                var empt = $('.content#'+id+' > .center >p');
+                var text = empt.text();
+                empt.val(text);
+                var val = $(this).find('input.modimp').val();
+                $(this).find('input.modimp');
+                empt.append(val);
+           //     console.log(btn,val);
+              //  $(this).find('input.modimp').empty();
+            $('#modal').modal("show","false");
+            });
+
+        var btn = $(document).find('button.btn.btn-primary');
+        $(document).on("click", btn, function () {
+
+            console.log(btn,val);
+          //  $(this).find('input.modimp').empty();
+        $('#modal').modal("show","false");
+        });
+    */
+
+
+    $(document).on("click", 'div.centerinfo a#active', function () {
+        var active = $('div.data').find('.noactive');
+        active.parent('.data').hide();
+    });
+    $(document).on("click", 'div.centerinfo a#completed', function () {
+        var completed = $('div.data').find('.active');
+        completed.parent('.data').hide();
+    });
+    $(document).on("click", 'div.centerinfo a#all', function () {
+        $('.data').show();
+    });
+    $(document).on("click", 'div.rightinfo p#clear', function () {
+        var clear = $('div.data').find('.noactive');
+        clear.parent('.data').remove();
+        searchitems();
+    });
+});
